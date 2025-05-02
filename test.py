@@ -33,5 +33,5 @@ class TestEndpoints(unittest.TestCase):
         self.assertTrue(isinstance(data['timestamp'], float))  # Check if timestamp is a float
 
 
-if __name__ == '__mian__':
-    unittest.mian()
+if __name__ == '__main__':
+    unittest.main()
