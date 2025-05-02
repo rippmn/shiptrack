@@ -25,7 +25,7 @@ class TestEndpoints(unittest.TestCase):
         self.assertTrue(isinstance(data['timestamp'], float))  # Check if timestamp is a float
 
     def test_readiness(self):
-        response = self.app.get('/ready')
+        response = self.app.get('/readiness')
         data = json.loads(response.data)
         self.assertEqual(response.status_code, 200)
         self.assertEqual(data['status'], 'ready')
