@@ -17,7 +17,7 @@ class TestEndpoints(unittest.TestCase):
         self.assertEqual(data['organization'], 'acme')
 
     def test_liveness(self):
-        response = self.app.get('/live')
+        response = self.app.get('/liveness')
         data = json.loads(response.data)
         self.assertEqual(response.status_code, 200)
         self.assertEqual(data['status'], 'live')
