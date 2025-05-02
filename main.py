@@ -1,5 +1,6 @@
 from flask import Flask, jsonify
 import json
+import time
 
 app = Flask(__name__)
 
@@ -49,13 +50,13 @@ def discovery():
 
 def liveness():
     """Implements the liveness endpoint."""
-    return jsonify({"status": "live", "code": 200})
+    return jsonify({"status": "live", "code": 200, "timestamp": time.time()})
 
 @app.route('/readiness', methods=['GET'])
 
 def readiness():
     """Implements the readiness endpoint."""
-    return jsonify({"status": "ready", "code": 200})
+    return jsonify({"status": "ready", "code": 200, "timestamp": time.time()})
 
 
 
